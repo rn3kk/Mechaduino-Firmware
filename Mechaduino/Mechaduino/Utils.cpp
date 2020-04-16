@@ -388,8 +388,8 @@ float read_angle()
     delay(10);
     }
 
-  //return encoderReading * (360.0 / 16384.0) / avg;
-  return lookup[encoderReading / avg];
+  return encoderReading * (360.0 / 16384.0) / avg;
+  //return lookup[encoderReading / avg];
 }
 
 

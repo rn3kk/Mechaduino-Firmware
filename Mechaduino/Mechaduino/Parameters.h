@@ -49,8 +49,10 @@ extern const int sin_1[];
 
 #define IN_4  6
 #define IN_3  5
-#define VREF_2 4
-#define VREF_1 9
+//#define VREF_2 4
+//#define VREF_1 9
+#define VREF_2 12
+#define VREF_1 11
 #define IN_2  7
 #define IN_1  8
 #define ledPin  13
