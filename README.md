@@ -1,3 +1,8 @@
+Это вариант доработки китайской Мехадуино (купленной на алиэкпересс). Полученные мной 3 платы с моторами были неисправны. На процессоре ATSAMD21 G18A-U 1644 были нерабочие два пина которые выведены на Vref1 и Vref2 драйвера шагового мотора. Поэтому исправил прошивку. Отрезал ноги процессоар и кинул 2 пекремычки. Платы ожили. Доработка видна на фото. 
+
+![image](images/wire.PNG)
+![image](images/cut.PNG)
+
 ![image](images/header.PNG)
 
 New release 11/26/2018!  The calibration table is now stored in flash memory!  (Many thanks to osresearch!) We've also fixed a couple of small bugs.
