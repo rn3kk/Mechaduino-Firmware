@@ -388,8 +388,8 @@ float read_angle()
     delay(10);
     }
 
-  return encoderReading * (360.0 / 16384.0) / avg;
-  //return lookup[encoderReading / avg];
+  //return encoderReading * (360.0 / 16384.0) / avg;
+  return lookup[encoderReading / avg];
 }
 
 
@@ -433,9 +433,9 @@ void serialCheck() {        //Monitors serial for commands.  Must be called in r
         break;
 
       case 'y':
-        r = (read_angle()+(360.0 * wrap_count));          // hold the current position
+        r = (read_angle()+(360.0 * wrap_count));          // hold the current position        
         SerialUSB.print("New setpoint ");
-        SerialUSB.println(r, 2);
+        SerialUSB.println(r, 2);                
         enableTCInterrupts();      //enable closed loop
         break;
 
@@ -449,7 +449,7 @@ void serialCheck() {        //Monitors serial for commands.  Must be called in r
         SerialUSB.println("Enter setpoint:");
         while (SerialUSB.available() == 0)  {}
         r = SerialUSB.parseFloat();
-        SerialUSB.println(r);
+        SerialUSB.println(r);        
         break;
 
       case 'x':
@@ -695,7 +695,7 @@ void print_angle()                ///////////////////////////////////       PRIN
 //  SerialUSB.print(" , ");
   SerialUSB.print("Angle: ");
   SerialUSB.print(read_angle(), 2);
-  SerialUSB.print(", raw encoder: ");
+  SerialUSB.print(", raw encoder: ");  
   SerialUSB.print(readEncoder());
   SerialUSB.println();
 }
