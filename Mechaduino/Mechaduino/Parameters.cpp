@@ -9,8 +9,8 @@
 
 volatile float Fs = 6500.0;   //Sample frequency in Hz
 
-volatile float pKp = 15.0;      //position mode PID values.  Depending on your motor/load/desired performance, you will need to tune these values.  You can also implement your own control scheme
-volatile float pKi = 0.2;
+volatile float pKp = 5.0;      //position mode PID values.  Depending on your motor/load/desired performance, you will need to tune these values.  You can also implement your own control scheme
+volatile float pKi = 0.05; //0.2;
 volatile float pKd = 250.0;//1000.0;
 volatile float pLPF = 30;       //break frequency in hertz
 

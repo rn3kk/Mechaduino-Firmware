@@ -31,7 +31,10 @@ void TC5_Handler() {                // gets called with FPID frequency
       switch (mode) {
         case 'x':         // position control                        
             e = (r - yw);
-            
+             SerialUSB.print("Error =");
+              SerialUSB.print(e);
+               SerialUSB.print('\n');
+               
             ITerm += (pKi * e);                             //Integral wind up limit
             if (ITerm > 150.0) ITerm = 150.0;
             else if (ITerm < -150.0) ITerm = -150.0;          
@@ -83,7 +86,7 @@ void TC5_Handler() {                // gets called with FPID frequency
 
       U = abs(u);       //
 
-      if (abs(e) < 0.1) ledPin_HIGH();    // turn on LED if error is less than 0.1
+      if (abs(e) < 1) ledPin_HIGH();    // turn on LED if error is less than 0.1
       else ledPin_LOW();                  //digitalWrite(ledPin, LOW);
 
 
@@ -113,11 +116,3 @@ void TC5_Handler() {                // gets called with FPID frequency
 
 
 }
-
-
-
-
-
-
-
-
